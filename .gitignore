@@ -1,0 +1,9 @@
+*.pyc
+*.pdf
+*.npz
+*.eps
+*.png
+Homework1_Eval/*
+Homework1/report/*
+Homework2/report/*
+
