@@ -62,8 +62,7 @@ aggregator = make_pipeline(StandardScaler(), LogisticRegression(class_weight={0:
 
 """
 Create, train, and predict metaclassifier
-"""
-clf = mclf.MetaClassifier(ensemble, aggregator, useSMOTE=True)
+""", 
 clf.fit(X.as_matrix(), y.as_matrix().ravel())
 y_test = clf.predict(X_test.as_matrix())
 y_test = pd.DataFrame(y_test, columns=['bugs']) #transform to pandas dataframe

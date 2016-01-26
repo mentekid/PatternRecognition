@@ -69,6 +69,7 @@ aggregator4 = GaussianNB()
 aggregator5 = tree.DecisionTreeClassifier(criterion='gini')
 
 aggregators = [aggregator1, aggregator2, aggregator3, aggregator4, aggregator5] #best: slightly biased logistic regressor
+
 """
 Create metaclassifier, train and test (or cross-validate)
 """
@@ -106,11 +107,11 @@ for aggregator in aggregators:
                 
 plt.figure(1)
 p1 = plt.boxplot(accuracy_peragg)
-plt.xticks([1, 2, 3], ['LR','LR_biased 1:2', 'LR_biased 1:4'])
+plt.xticks([1, 2, 3, 4, 5], ['LR 1:1','LR 1:2', 'LR 1:4', 'Gaussian', 'Tree'])
 plt.title('Accuracy of meta-models')
 plt.ylabel('Accuracy')
 plt.xlabel('Models')
-plt.axis([0, 4, 0, 1])
+plt.axis([0, 6, 0, 1])
 plt.show(p1)
 
 plt.figure(2)
